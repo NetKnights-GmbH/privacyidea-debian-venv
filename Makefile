@@ -3,7 +3,7 @@ PI_VERSION=${VERSION}
 VENV=~/venv
 
 phony:
-	@echo Build Jessie package for privacyIDEA
+	@echo Build Stretch package for privacyIDEA
 	@echo 
 	@echo make clean
 	@echo make init
@@ -29,7 +29,7 @@ init:
 build:
 	mkdir -p ~/src/privacyidea/DEBUILD
 	# build package
-	(. ${VENV}; cd ~/src/privacyidea; make venvdeb)
+	(. ${VENV}/bin/activate; cd ~/src/privacyidea; make venvdeb)
 	cp ~/src/privacyidea/DEBUILD/*.deb  ~/OUT
 
 ifndef VERSION
